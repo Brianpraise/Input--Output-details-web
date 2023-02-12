@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+      body {
+        background-image: url(images/img.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      
+      .content {
+        padding: 100px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 2px 2px 5px;
+        margin-top: 50px;
+        margin-left: 300px;
+      
+      }
+      
+      h1 {
+       
+        font-size: 70px;
+        color: black;
+        color: darkmagenta;
+      }
+      #message {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Welcome</h1>
+      <p id="message"></p>
+    </div>
+    <script>
+      const firstName = localStorage.getItem("firstName");
+      const regNumber = localStorage.getItem("regNumber");
+      const age = localStorage.getItem("age");
+      const message = document.getElementById("message");
+      message.innerHTML =`
+      Welcome: ${firstName}<br>
+      Your registration number is: ${regNumber}<br>
+      You are ${age} years old.
+    `;
+    </script>
+  </body>
+</html>

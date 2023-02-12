@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <style>
+           body {
+        background-image: url(images/img.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      
+      form {
+        padding: 50px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 4px 4px 8px;
+        margin-top: 50px;
+        margin-left: 500px;
+      }
+      
+      input[type="text"], input[type="number"] {
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        width: 70%;
+      }
+      
+      input[type="submit"] {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 60%;
+      }
+      p{
+        font-size: 25px;
+        font-weight: bold;
+
+      }
+      h1{
+        font-weight: bold;
+        font-size: 50px;
+        color: darkmagenta;
+      }
+      h2{
+        font-size: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Our student details Web Page</h1>
+    <p>Please enter your details to continue:</p>
+    <form id="form">
+      <h2>Student Details Form</h2>
+      <input type="text" placeholder="First Name" id="first-name">
+      <input type="text" placeholder="Registration Number" id="reg-number">
+      <input type="number" placeholder="Age" id="age">
+      <input type="submit" value="Submit">
+    </form>
+    <script>
+      const form = document.getElementById("form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const firstName = document.getElementById("first-name").value;
+        const regNumber = document.getElementById("reg-number").value;
+        const age = document.getElementById("age").value;
+        localStorage.setItem("firstName", firstName);
+        localStorage.setItem("regNumber", regNumber);
+        localStorage.setItem("age", age);
+        window.location.href = "welcome.html";
+      });
+    </script>
+  </body>
+</html>
